@@ -1,2 +1,2 @@
-include(':domain',':app')
+include(':domain',':app',':network')
 rootProject.name = "Earthquake"
