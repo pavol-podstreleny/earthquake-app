@@ -55,32 +55,56 @@ package com.example.domain.earthquake.entities
  * @param ids A comma-separated list of event ids that are associated to an event.
  * See (https://earthquake.usgs.gov/data/comcat/data-eventterms.php#ids)
  *
- * TODO continue
+ * @param sources A comma-separated list of network contributors.
+ * See (https://earthquake.usgs.gov/data/comcat/data-eventterms.php#sources)
+ *
+ * @param types A comma-separated list of product types associated to this event.
+ * See (https://earthquake.usgs.gov/data/comcat/data-eventterms.php#types)
+ *
+ * @param nst The total number of seismic stations used to determine earthquake location.
+ * See (https://earthquake.usgs.gov/data/comcat/data-eventterms.php#nst)
+ *
+ * @param dmin Horizontal distance from the epicenter to the nearest station (in degrees).
+ * See (https://earthquake.usgs.gov/data/comcat/data-eventterms.php#dmin)
+ *
+ * @param rms The root-mean-square (RMS) travel time residual, in sec, using all weights.
+ * See (https://earthquake.usgs.gov/data/comcat/data-eventterms.php#rms)
+ *
+ * @param gap The largest azimuthal gap between azimuthally adjacent stations (in degrees).
+ * See (https://earthquake.usgs.gov/data/comcat/data-eventterms.php#gap)
+ *
+ * @param magType The method or algorithm used to calculate the preferred magnitude for the event.
+ * See (https://earthquake.usgs.gov/data/comcat/data-eventterms.php#magType)
+ *
+ * @param type Type of seismic event.
+ * See (https://earthquake.usgs.gov/data/comcat/data-eventterms.php#type)
+ *
+ *
  */
-data class EarthquakeDetail(
-    val mag: Double,
-    val place: String,
-    val time: Long,
-    val updated: Long,
-    val tz: Int?,
-    val url: String,
-    val detail: String,
-    val felt: Int?,
-    val cdi: Double?,
-    val mmi: Double?,
-    val alert: String?,
-    val status: String,
-    val tsunami: Int,
-    val sig: Integer,
-    val net: String,
-    val code: String,
-    val ids: String,
-    val sources: String,
-    val types: String,
-    val nst: Int?,
-    val dmin: Double?,
-    val rms: Double?,
-    val gap: Double?,
-    val magType: String,
-    val type: String,
-)
+interface EarthquakeDetail {
+    val mag: Double
+    val place: String
+    val time: Long
+    val updated: Long
+    val tz: Int?
+    val url: String
+    val detail: String
+    val felt: Int?
+    val cdi: Double?
+    val mmi: Double?
+    val alert: String?
+    val status: String
+    val tsunami: Int
+    val sig: Int
+    val net: String
+    val code: String
+    val ids: String
+    val sources: String
+    val types: String
+    val nst: Int?
+    val dmin: Double?
+    val rms: Double?
+    val gap: Double?
+    val magType: String
+    val type: String
+}
