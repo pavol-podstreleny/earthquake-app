@@ -7,4 +7,5 @@ dependencies {
     api(project(":domain"))
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation "com.squareup.retrofit2:retrofit:2.9.0"
+    implementation "org.koin:koin-core:$koin_version"
 }
